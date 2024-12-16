@@ -19,6 +19,3 @@ if ($row) {
     echo "Error deleting data: " . mysqli_error($conn);
 }
 ?>
-<form action="" method="get">
-    delete <input type="number" name="id" id="del">
-</form>

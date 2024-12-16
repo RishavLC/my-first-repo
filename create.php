@@ -33,16 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Create New Student</h1>
     <form action="" method="post" onsubmit="return addRole(event)"> <!-- Form with POST method -->
-        Student name: <input type="text" name="name1" id="name" required><br>
-        Student address: <input type="text" name="address1" id="address" required><br>
+        Student name: <input type="text" name="name1" id="name1" required><br>
+        Student address: <input type="text" name="address1" id="address1" required><br>
         <input type="submit" value="Create Student"> <!-- Submit button -->
     </form>
     <div id="response page"></div>
 </body>
 </html>
-<?php mysqli_close($conn); ?>
-
-
+<?php 
+mysqli_close($conn);
+ ?>
 <script>
     function addRole(e){
         e.preventDefault();
@@ -64,13 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       xhr.onload = function(){
     if(xhr.status==200){
         // handle sucess
-        document.getElementById('responseMessage').innerText="success";
-        // '<p style="color: green:">${xhr.responseText}</p>';
+        document.getElementById('responseMessage').innerText="success"
+        '<p style="color: green:">${xhr.responseText}</p>';
         }
         else{
             // handle error
-            document.getElementById('responseMessage').innerText="failed";
-            // '<p style="color: red:">${xhr.responseText}</p>';
+            document.getElementById('responseMessage').innerText="failed"
+            '<p style="color: red:">${xhr.responseText}</p>';
         }
     };
         xhr.send(formData);
